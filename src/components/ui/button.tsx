@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({action, label, onClick}) => {
         onClick(action)
     }
   return (
-    <button onClick={handleClick} className='w-[40%] text-center bg-gray-800 text-gray-50 font font-semibold text-lg py-1 rounded-md'>{capitalizeString(label)}</button>
+    <button onClick={handleClick} className='w-[100%] h-[60px] text-center bg-[#A1C79A] shadow-md shadow-[#759171] text-gray-800 font font-extrabold text-xl py-1 rounded-md'>{capitalizeString(label)}</button>
     )
 }
 

@@ -23,15 +23,13 @@ const PokemonSelect: React.FC<PokemonSelectProps> = ({
   console.log(pokelist);
 
   return (
-    <Wrapper>
       <select
-        className="w-full h-[60px] text-xl px-4 rounded-md text-gray-800 font-bold"
+        className="w-full h-[50px] text-xl px-4 rounded-md text-[#3f6636] bg-[#A1C79A] font-semibold shadow-md shadow-[#759171]"
         onChange={handleChange}
         value={id}
       >
         {pokelist.map((p, i) => <PokemonOptionSelect index={i} pokemon={p} key={p.name} /> )}
       </select>
-    </Wrapper>
   );
 };
 

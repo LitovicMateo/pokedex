@@ -21,7 +21,7 @@ const ChangePokemon: React.FC<ChangePokemonProps> = ({changeId, id, nextPokemon,
 
     }
   return (
-    <div className='flex justify-around w-full'>
+    <div className='flex justify-around gap-8 w-full'>
         <Button action='decrement' label={prevPokemon || ''} onClick={handleClick} />
         <Button action='increment' label={nextPokemon || ''} onClick={handleClick} />
     </div>

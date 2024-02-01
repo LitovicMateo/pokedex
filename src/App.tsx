@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen bg-blue-100  px-[10%]">
+    <div className="h-[100vh] bg-[#B1D2AC] px-[10%]">
       <div className="mx-auto max-w-[500px] flex flex-col justify-center items-center gap-4 pt-8">
         <SearchBar setId={pokemonSelectHandler} pokelist={pokelist} />
         <PokemonSelect
