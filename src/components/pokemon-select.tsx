@@ -1,5 +1,4 @@
 import React, { ChangeEvent } from "react";
-import Wrapper from "./ui/wrapper";
 import { PokemonItem } from "../hooks/use-fetch-pokemon-list";
 
 import PokemonOptionSelect from "./pokemon-option-select";
