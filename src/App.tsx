@@ -1,63 +1,37 @@
-import { useEffect, useState } from "react";
-import { Pokemon } from "./api/util";
+import { useState } from "react";
 import PokemonSelect from "./components/pokemon-select";
 import PokemonCard from "./components/pokemon-card";
-import { useFetchPokemon } from "./hooks/use-fetch-pokemon";
 import ChangePokemon from "./components/change-pokemon-controls";
-import {
-  PokemonItem,
-  useFetchPokemonList,
-} from "./hooks/use-fetch-pokemon-list";
+import { useFetchPokemonList } from "./hooks/use-fetch-pokemon-list";
 import SearchBar from "./components/search-bar";
 
 function App() {
   const [id, setId] = useState(1);
-  const [pokelist, setPokelist] = useState<PokemonItem[]>([]);
-  const [pokemon, setPokemon] = useState<Pokemon>();
-
-  //Initiral Load
-  useEffect(() => {
-    const getData = async () => {
-      const listData = await useFetchPokemonList();
-      const pData = await useFetchPokemon(id);
-      setPokelist(listData);
-      setPokemon(pData);
-    };
-
-    getData();
-  }, []);
-
-  useEffect(() => {
-    const getData = async () => {
-      const data: Pokemon = await useFetchPokemon(id);
-      setPokemon(data);
-    };
-
-    getData();
-  }, [id]);
+  const { pokemonList} = useFetchPokemonList();
 
   const pokemonSelectHandler = (id: number) => {
     setId(id);
   };
 
+
   return (
     <div className="h-[100vh] bg-[#B1D2AC] px-[10%]">
-      <div className="mx-auto max-w-[500px] flex flex-col justify-center items-center gap-4 pt-8">
-        <SearchBar setId={pokemonSelectHandler} pokelist={pokelist} />
+      <div className="mx-auto max-w-[450px] flex flex-col justify-center items-center gap-4 pt-8">
+        <SearchBar setId={pokemonSelectHandler} pokelist={pokemonList} />
         <PokemonSelect
           id={id}
-          pokelist={pokelist}
+          pokelist={pokemonList}
           handleId={pokemonSelectHandler}
         />
-        {pokelist.length > 0 && pokemon && (
+        {pokemonList.length > 0 && (
           <>
-            <PokemonCard pokemon={pokemon} />
+            <PokemonCard id={id} />
 
             <ChangePokemon
               id={id}
               changeId={pokemonSelectHandler}
-              nextPokemon={pokelist[id].name}
-              prevPokemon={id === 1 ? "" : pokelist[id - 2].name}
+              nextPokemon={pokemonList[id].name}
+              prevPokemon={id === 1 ? "" : pokemonList[id - 2].name}
             />
           </>
         )}

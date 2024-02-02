@@ -15,6 +15,9 @@ const ChangePokemon: React.FC<ChangePokemonProps> = ({changeId, id, nextPokemon,
             id++
             changeId(id)
         } else if (action === "decrement") {
+            if (id === 1) {
+                return
+            }
             id--
             changeId(id)
         }

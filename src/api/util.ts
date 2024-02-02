@@ -1,4 +1,4 @@
-const POKEAPI_URI = "https://pokeapi.co/api/v2"
+export const POKEAPI_URI = "https://pokeapi.co/api/v2"
 
 export type Pokemon = {
     name: string;
@@ -16,7 +16,6 @@ export type PokemonListItem = {
 export const fetchAllPokemons = async(): Promise<PokemonListItem[]> => {
     const res = await fetch(`${POKEAPI_URI}/pokemon?limit=700`);
     const data = await res.json()
-    console.log(data.results);    
     return data.results;
 }
 
@@ -29,6 +28,8 @@ export const fetchPokemonByType = async() => {
 }
 
 export const fetchPokemonById = async(id: number) => {
+    console.log("FP by ID Called");
+    
     const res = await fetch(`${POKEAPI_URI}/pokemon/${id}/`);
     const data = await res.json()
     return data

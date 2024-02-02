@@ -19,7 +19,6 @@ const PokemonSelect: React.FC<PokemonSelectProps> = ({
     handleId(parseFloat(e.target.value));
   };
 
-  console.log(pokelist);
 
   return (
       <select
