@@ -1,6 +1,6 @@
 import React from "react";
-import { capitalizeString } from "../api/helpers";
-import { PokemonItem } from "../hooks/use-fetch-pokemon-list";
+import { capitalizeString } from "../lib/util/capitalizeString";
+import { PokemonItem } from "../lib/hooks/usePokemonList";
 
 type PokemonOptionSelectProps = {
   pokemon: PokemonItem;
@@ -18,7 +18,7 @@ const PokemonOptionSelect: React.FC<PokemonOptionSelectProps> = ({
       value={index + 1}
       data-icon={pokemon.img}
     >
-      {capitalizeString(pokemon.name)}
+      {capitalizeString(pokemon.name)}  
     </option>
   );
 };

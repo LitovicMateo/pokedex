@@ -1,6 +1,6 @@
 import React from 'react'
-import PokemonCardTabItem from './pokemon-card-tabitem'
-import { ActiveTabs } from './pokemon-card';
+import PokemonCardTabItem from './TabItem'
+import { ActiveTabs } from './Card';
 
 type PokemonCardTabsProps = {
   active: string;

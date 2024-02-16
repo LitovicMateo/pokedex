@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchList from "./search-list";
-import { PokemonItem } from "../hooks/use-fetch-pokemon-list";
+import { PokemonItem } from "../lib/hooks/usePokemonList";
 
 type SearchBarProps = {
   pokelist: PokemonItem[];
@@ -18,7 +18,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ pokelist, setId }) => {
   return (
       <div className="relative  w-full">
         <input
-          className="w-full bg-[#A1C79A] rounded-[4px] px-4 py-2 text-xl font-semibold font-['Klee_One'] text-[#3f6636] placeholder-[#3f6636] shadow-md shadow-[#759171]"
+          className="w-full bg-[#A1C79A] rounded-[4px] px-4 py-2 text-xl font-semibold font-['Klee_One'] text-[#3f6636] placeholder-[#3f6636]"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

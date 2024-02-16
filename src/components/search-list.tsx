@@ -1,7 +1,7 @@
 import React from "react";
 import Wrapper from "./ui/wrapper";
-import { PokemonItem } from "../hooks/use-fetch-pokemon-list";
-import { capitalizeString } from "../api/helpers";
+import { PokemonItem } from "../lib/hooks/usePokemonList";
+import { capitalizeString } from "../lib/util/capitalizeString";
 
 type SearchListProps = {
   list: PokemonItem[];

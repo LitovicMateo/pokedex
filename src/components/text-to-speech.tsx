@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
-import { Pokemon } from '../api/util';
+import { PokemonDetails, PokemonDetailsAPI } from '../lib/types/PokemonAPI';
 
 type TextToSpeechProps = {
-    pokemon: Pokemon
+    pokemon: PokemonDetails
 }
 
 const TextToSpeech: React.FC<TextToSpeechProps> = ({pokemon}) => {

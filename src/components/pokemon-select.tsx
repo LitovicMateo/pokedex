@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { PokemonItem } from "../hooks/use-fetch-pokemon-list";
+import { PokemonItem } from "../lib/hooks/usePokemonList";
 
 import PokemonOptionSelect from "./pokemon-option-select";
 

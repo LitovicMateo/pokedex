@@ -1,5 +1,5 @@
 import React from "react";
-import { ActiveTabs } from "./pokemon-card";
+import { ActiveTabs } from "./Card";
 
 type PokemonCardTabItemProps = {
   item: string;

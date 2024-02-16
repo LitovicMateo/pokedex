@@ -1,5 +1,5 @@
 import React from 'react'
-import { capitalizeString } from '../../api/helpers';
+import { capitalizeString } from '../../lib/util/capitalizeString'
 
 type ButtonProps = {
     label: string;
