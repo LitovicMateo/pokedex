@@ -5,6 +5,7 @@ import PokemonCardTabs from "./Tabs";
 import { capitalizeString } from "../../lib/util/capitalizeString";
 import PokemonCardStats from "./PokemonStats";
 import { useFetchPokemon } from "../../lib/hooks/usePokemonDetails";
+import Wrapper from "../ui/wrapper";
 
 type PokemonCardProps = {
   id: number;
@@ -21,7 +22,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ id }) => {
   };
 
   return (
-    <div className=" p-4 mx-auto pb-6 h-[600px] w-full rounded-lg shadow-lg shadow-[#759171] flex-col justify-ce items-center gap-6 inline-flex bg-gradient-to-br from-[#A5CD9E] to-[#9EC598]">
+    <Wrapper>
       {isLoading && <p>Loading...</p>}
       {!isLoading && pokemon ? (
         <>
@@ -36,15 +37,13 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ id }) => {
 
           <PokemonCardTabs active={activeTab} tabHandler={handleTabClick} />
 
-          {activeTab === "Info" && pokemon && (
-            <PokemonInfo pokemon={pokemon} />
-          )}
+          {activeTab === "Info" && pokemon && <PokemonInfo pokemon={pokemon} />}
           {activeTab === "Stats" && <PokemonCardStats stats={pokemon.stats} />}
         </>
       ) : (
         <div></div>
       )}
-    </div>
+    </Wrapper>
   );
 };
 
