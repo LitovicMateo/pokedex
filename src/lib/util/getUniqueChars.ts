@@ -1,5 +1,5 @@
 export const getUniqueChars = (word: string) => {
-    console.log(word);
+    // console.log(word);
     
 	// remove whitespace
 	const trimmed = word.toLowerCase().replace(" ", "");

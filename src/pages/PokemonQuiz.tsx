@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PokemonQuiz = () => {
+const PokemonQuiz: React.FC = () => {
   return (
     <div>PokemonQuiz</div>
   )
