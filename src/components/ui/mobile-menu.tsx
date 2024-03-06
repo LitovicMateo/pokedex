@@ -38,7 +38,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menuHandler }) => {
 
       <ul className="flex h-full w-full flex-col gap-8 justify-center items-center">
         {links.map(link => {
-          return <Link to={link.link} onClick={clickHandler}>{link.label}</Link>
+          return <Link key={link.label} to={link.link} onClick={clickHandler}>{link.label}</Link>
         })}
         
       </ul>
