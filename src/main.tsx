@@ -6,7 +6,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Pokedex from "./pages/Pokedex.tsx";
 import PokemonGuess from "./pages/PokemonGuess.tsx";
 import PokemonQuiz from "./pages/PokemonQuiz.tsx";
-import { PokemonQuizContextProvider } from "./context/pokemon-quiz-ctx.tsx";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +30,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <PokemonQuizContextProvider>
       <RouterProvider router={router} />
-    </PokemonQuizContextProvider>
   </React.StrictMode>
 );
