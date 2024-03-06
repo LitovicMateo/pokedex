@@ -7,14 +7,14 @@ transforms the data, and returns it along with 'loading' and 'error' state.
 
 
 import { POKEAPI_URI, fetchPokemonSprite } from "../../api/util";
-import { PokemonDetailsAPI } from "../types/PokemonAPI";
+import { PokemonDetails, PokemonDetailsAPI } from "../types/PokemonAPI";
 import { normalizeDescription } from "../util/normalizeDescription";
 import { useEffect, useState } from "react";
 
 const statAcronyms = ["HP", "ATK", "DEF", "SATK", "SDEF", "SPD"];
 const maxStats = [255, 180, 200, 180, 200, 200];
 
-export const useFetchPokemon = (id: number) => {
+export const useFetchPokemon = (id: number): {pokemon: PokemonDetails | null, isLoading: boolean, error: string | undefined} => {
   const [details, setDetails] = useState<PokemonDetailsAPI>();
   const [description, setDescription] = useState<string>();
   const [error, setError] = useState<string>();
@@ -51,7 +51,7 @@ export const useFetchPokemon = (id: number) => {
   }, [id]);
 
 
-  let pokemon;
+  let pokemon: PokemonDetails | null = null;
 
   if (details && description) {
     pokemon = {

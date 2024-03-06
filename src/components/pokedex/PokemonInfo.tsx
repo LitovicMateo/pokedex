@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TextToSpeech from "../text-to-speech";
-import { useFetchPokemon } from "../../lib/hooks/usePokemonDetails";
-import { PokemonDetails, PokemonDetailsAPI } from "../../lib/types/PokemonAPI";
+import { PokemonDetails } from "../../lib/types/PokemonAPI";
 
 type PokemonInfoProps = {
   pokemon: PokemonDetails;

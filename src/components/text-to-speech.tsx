@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
-import { PokemonDetails, PokemonDetailsAPI } from '../lib/types/PokemonAPI';
+import { PokemonDetails } from '../lib/types/PokemonAPI';
 
 type TextToSpeechProps = {
     pokemon: PokemonDetails

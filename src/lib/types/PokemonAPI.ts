@@ -37,6 +37,6 @@ export type PokemonDetails = {
     shortStat: string;
     stat: string;
     value: number;
-    statGrade: number
-  }
+    statGrade: string
+  }[]
 }
