@@ -20,6 +20,7 @@ const PokemonGuess = () => {
     const [message, setMessage] = useState<string>("");
     const { pokemonList } = useFetchPokemonList();
     const { pokemon } = useFetchPokemon(id);
+    
     const misses = guesses.length - correctGuesses.length;
     const missesArr = guesses.filter((l) => !correctGuesses.includes(l))
 
